@@ -25,6 +25,7 @@ public class TreeTest extends TestCase {
         tree.insertNode("B");
         tree.insertNode("G");
         tree.insertNode("D");
+        tree.insertNode("D");
         assertEquals("O", tree.getRoot().getData());
     }
 }

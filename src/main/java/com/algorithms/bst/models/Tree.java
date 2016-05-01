@@ -11,19 +11,34 @@ public class Tree<T extends Comparable<T>> {
         return root;
     }
 
-    public void insertNode(final T data) {
-        root = insertNode(root, data);
+
+    public void insertVertex(final T data) {
+        root = insertVertex(root, data);
     }
 
-    private Vertex<T> insertNode(final Vertex<T> current, final T data) {
+    private Vertex<T> insertVertex(final Vertex<T> current, final T data) {
         if (current == null) return new Vertex<>(data);
         else if (current.getData() == data) return current;
         else if (current.compareTo(data) >= 0) {
-            current.setLeft(insertNode(current.getLeft(), data));
+            current.setLeft(insertVertex(current.getLeft(), data));
             return current;
         } else {
-            current.setRight(insertNode(current.getRight(), data));
+            current.setRight(insertVertex(current.getRight(), data));
             return current;
+        }
+    }
+
+    public boolean findNode(T data) {
+        return data != null && findNode(root, data);
+    }
+
+    private boolean findNode(Vertex<T> current, T data) {
+        if (current == null) return false;
+        else {
+            Integer compare = current.compareTo(data);
+            if (compare == 0) return true;
+            else if (compare > 0) return findNode(current.getLeft(), data);
+            else return findNode(current.getRight(), data);
         }
     }
 }

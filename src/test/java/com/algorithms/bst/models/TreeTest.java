@@ -1,31 +1,37 @@
 package com.algorithms.bst.models;
 
-import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by brianmomongan on 2/05/16.
  */
-public class TreeTest extends TestCase {
-
+public class TreeTest {
     Tree<String> tree;
 
-    @Override
     @Before
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         tree = new Tree<>();
-
+        tree.insertVertex("O");
+        tree.insertVertex("A");
+        tree.insertVertex("B");
+        tree.insertVertex("G");
+        tree.insertVertex("D");
+        tree.insertVertex("D");
     }
 
     @Test
-    public void testInsertNode() throws Exception {
-        tree.insertNode("O");
-        tree.insertNode("A");
-        tree.insertNode("B");
-        tree.insertNode("G");
-        tree.insertNode("D");
-        tree.insertNode("D");
+    public void testInsertVertex() throws Exception {
         assertEquals("O", tree.getRoot().getData());
     }
+
+    @Test
+    public void findNode() throws Exception {
+        assertEquals(true, tree.findNode("O"));
+        assertEquals(false, tree.findNode("N"));
+        assertEquals(false, tree.findNode(null));
+    }
+
 }

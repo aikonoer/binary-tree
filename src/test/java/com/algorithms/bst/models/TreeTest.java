@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
  * Created by brianmomongan on 2/05/16.
  */
 public class TreeTest {
-    Tree<String> tree;
+    private Tree<String> tree;
 
     @Before
     public void setUp() throws Exception {
@@ -36,10 +36,16 @@ public class TreeTest {
 
     @Test
     public void deleteVertex() throws Exception {
+        tree.insertVertex("I");
+        tree.insertVertex("J");
+        tree.deleteVertex("M");
+        assertEquals("O", tree.getRoot().getData());
         tree.deleteVertex("O");
         assertEquals("K", tree.getRoot().getData());
-        tree.deleteVertex("P");
-        assertEquals("K", tree.getRoot().getData());
+        tree.deleteVertex("K");
+        assertEquals("J", tree.getRoot().getData());
+        tree.deleteVertex("A");
+        assertEquals("J", tree.getRoot().getData());
     }
 
 }

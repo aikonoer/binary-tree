@@ -1,5 +1,7 @@
 package com.algorithms.bst.models;
 
+import java.util.List;
+
 /**
  * Created by brianmomongan on 1/05/16.
  */
@@ -73,5 +75,41 @@ public class Tree<T extends Comparable<T>> {
             }
             return found;
         }
+    }
+
+    public List<Vertex<T>> preOrder(List<Vertex<T>> list) {
+        return preOrder(list, root);
+    }
+
+    private List<Vertex<T>> preOrder(List<Vertex<T>> list, Vertex<T> current) {
+        if (current == null) return list;
+        list.add(current);
+        preOrder(list, current.getLeft());
+        preOrder(list, current.getRight());
+        return list;
+    }
+
+    public List<Vertex<T>> inOrder(List<Vertex<T>> list) {
+        return inOrder(list, root);
+    }
+
+    private List<Vertex<T>> inOrder(List<Vertex<T>> list, Vertex<T> current) {
+        if (current == null) return list;
+        inOrder(list, current.getLeft());
+        list.add(current);
+        inOrder(list, current.getRight());
+        return list;
+    }
+
+    public List<Vertex<T>> postOrder(List<Vertex<T>> list) {
+        return postOrder(list, root);
+    }
+
+    private List<Vertex<T>> postOrder(List<Vertex<T>> list, Vertex<T> current) {
+        if (current == null) return list;
+        postOrder(list, current.getLeft());
+        postOrder(list, current.getRight());
+        list.add(current);
+        return list;
     }
 }

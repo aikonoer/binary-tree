@@ -18,8 +18,8 @@ public class TreeTest {
         tree.insertVertex("A");
         tree.insertVertex("B");
         tree.insertVertex("G");
-        tree.insertVertex("D");
-        tree.insertVertex("D");
+        tree.insertVertex("K");
+        tree.insertVertex("P");
     }
 
     @Test
@@ -28,10 +28,18 @@ public class TreeTest {
     }
 
     @Test
-    public void findNode() throws Exception {
-        assertEquals(true, tree.findNode("O"));
-        assertEquals(false, tree.findNode("N"));
-        assertEquals(false, tree.findNode(null));
+    public void findVertex() throws Exception {
+        assertEquals(true, tree.findVertex("O"));
+        assertEquals(false, tree.findVertex("N"));
+        assertEquals(false, tree.findVertex(null));
+    }
+
+    @Test
+    public void deleteVertex() throws Exception {
+        tree.deleteVertex("O");
+        assertEquals("K", tree.getRoot().getData());
+        tree.deleteVertex("P");
+        assertEquals("K", tree.getRoot().getData());
     }
 
 }

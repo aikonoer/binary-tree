@@ -1,6 +1,7 @@
 package com.algorithms.bst.models;
 
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Created by brianmomongan on 1/05/16.
@@ -112,6 +113,20 @@ public class Tree<T extends Comparable<T>> {
         list.add(current);
         return list;
     }
+
+    public List<Vertex<T>> levelOrder(List<Vertex<T>> list, Queue<Vertex<T>> queue) {
+        return levelOrder(root, list, queue);
+    }
+
+    private List<Vertex<T>> levelOrder(Vertex<T> current, List<Vertex<T>> list, Queue<Vertex<T>> queue) {
+        if (current == null) return list;
+        list.add(current);
+        if (current.getLeft() != null) queue.add(current.getLeft());
+        if (current.getRight() != null) queue.add(current.getRight());
+        if (!queue.isEmpty()) levelOrder(queue.remove(), list, queue);
+        return list;
+    }
+
 
     public boolean isBst() {
         return isBst(root, null, null);

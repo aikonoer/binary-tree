@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -18,6 +19,7 @@ public class TreeTest {
     }
 
     private Tree<String> treeBasics;
+
     private Tree<String> treeTraversal;
     private Tree<Integer> treeNum;
 
@@ -94,6 +96,12 @@ public class TreeTest {
     public void postOrder() throws Exception {
         final List<Vertex<String>> vertices = treeTraversal.postOrder(new ArrayList<Vertex<String>>());
         assertEquals("A", vertices.get(0).getData());
+    }
+
+    @Test
+    public void levelOrder() throws Exception {
+        final List<Vertex<String>> vertices = treeTraversal.levelOrder(new ArrayList<Vertex<String>>(), new LinkedList<Vertex<String>>());
+        assertEquals("F", vertices.get(0).getData());
     }
 
     @Test

@@ -18,13 +18,12 @@ public class TreeTest {
     }
 
     private Tree<String> treeBasics;
-
     private Tree<String> treeTraversal;
     private Tree<Integer> treeNum;
 
     @Before
     public void setUp() throws Exception {
-/*      treeBasics = new Tree<>();
+        treeBasics = new Tree<>();
         treeBasics.insertVertex("O");
         treeBasics.insertVertex("A");
         treeBasics.insertVertex("B");
@@ -41,7 +40,14 @@ public class TreeTest {
         treeTraversal.insertVertex("E");
         treeTraversal.insertVertex("G");
         treeTraversal.insertVertex("I");
-        treeTraversal.insertVertex("H");*/
+        treeTraversal.insertVertex("H");
+
+        treeNum = new Tree<>();
+        treeNum.insertVertex(5);
+        treeNum.insertVertex(1);
+        treeNum.insertVertex(8);
+        treeNum.insertVertex(7);
+        treeNum.insertVertex(12);
     }
 
     @Test
@@ -92,25 +98,8 @@ public class TreeTest {
 
     @Test
     public void isBst() throws Exception {
-        /*treeTraversal = new Tree<>();
-        treeTraversal.insertVertex("F");
-        treeTraversal.insertVertex("B");
-        treeTraversal.insertVertex("A");
-        treeTraversal.insertVertex("D");
-        treeTraversal.insertVertex("C");
-        treeTraversal.insertVertex("E");
-        treeTraversal.insertVertex("G");
-        treeTraversal.insertVertex("I");
-        treeTraversal.insertVertex("H");
-
-        assertEquals(true, treeTraversal.isBst());*/
-
-        treeNum = new Tree<>();
-        treeNum.insertVertex(5);
-        treeNum.insertVertex(1);
-        treeNum.insertVertex(8);
-        treeNum.insertVertex(7);
-        treeNum.insertVertex(12);
+        assertEquals(true, treeTraversal.isBst());
+        assertEquals(true, treeNum.isBst());
         assertEquals(true, treeNum.isBst());
     }
 

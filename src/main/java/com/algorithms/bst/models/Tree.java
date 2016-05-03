@@ -112,4 +112,15 @@ public class Tree<T extends Comparable<T>> {
         list.add(current);
         return list;
     }
+
+    public boolean isBst() {
+        return isBst(root, null, null);
+    }
+
+    private boolean isBst(Vertex<T> current, Vertex<T> min, Vertex<T> max) {
+        if (current == null) return true;
+        final boolean left = (min == null) ? isBst(current.getLeft(), min, current) : min.compareTo(current.getData()) < 0 && isBst(current.getLeft(), min, current);
+        final boolean right = (max == null) ? isBst(current.getRight(), current, max) : max.compareTo(current.getData()) > 0 && isBst(current.getRight(), current, max);
+        return left && right;
+    }
 }

@@ -151,6 +151,25 @@ public class Tree<T extends Comparable<T>> {
         inOrderSuccessor(current.getRight(), data, list);
         return list;
     }
+
+    public Vertex<T> findMin() {
+        return findMin(root);
+    }
+
+    private Vertex<T> findMin(Vertex<T> current) {
+        if (current.getLeft() == null) return current;
+        else return findMin(current.getLeft());
+    }
+
+    public Vertex<T> findMax() {
+        return findMax(root);
+    }
+
+    private Vertex<T> findMax(Vertex<T> current) {
+        if (current.getRight() == null) return current;
+        else return findMax(current.getRight());
+    }
+
 }
 
 

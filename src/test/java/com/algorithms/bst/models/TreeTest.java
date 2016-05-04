@@ -121,4 +121,40 @@ public class TreeTest {
         assertEquals("G", successorF.getData());
         assertEquals(null, successorI);
     }
+
+    @Test
+    public void findMin() throws Exception {
+        final Vertex<String> minA = treeTraversal.findMin();
+        assertEquals("A", minA.getData());
+        treeTraversal.deleteVertex("A");
+        final Vertex<String> minB = treeTraversal.findMin();
+        assertEquals("B", minB.getData());
+
+    }
+
+    @Test
+    public void findMax() throws Exception {
+        final Vertex<String> maxI = treeTraversal.findMax();
+        assertEquals("I", maxI.getData());
+        treeTraversal.deleteVertex("I");
+        final Vertex<String> maxH = treeTraversal.findMax();
+        assertEquals("H", maxH.getData());
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -127,7 +127,6 @@ public class Tree<T extends Comparable<T>> {
         return list;
     }
 
-
     public boolean isBst() {
         return isBst(root, null, null);
     }
@@ -138,4 +137,46 @@ public class Tree<T extends Comparable<T>> {
         final boolean right = (max == null) ? isBst(current.getRight(), current, max) : max.compareTo(current.getData()) > 0 && isBst(current.getRight(), current, max);
         return left && right;
     }
+
+    public Vertex<T> inOrderSuccessor(T data, List<Vertex<T>> list) {
+        final List<Vertex<T>> vertices = inOrderSuccessor(root, data, list);
+        return vertices.size() == 2 ? vertices.get(1) : null;
+    }
+
+    private List<Vertex<T>> inOrderSuccessor(Vertex<T> current, T data, List<Vertex<T>> list) {
+        if (current == null) return list;
+        inOrderSuccessor(current.getLeft(), data, list);
+        if (list.size() == 1) list.add(current);
+        if (current.compareTo(data) == 0) list.add(current);
+        inOrderSuccessor(current.getRight(), data, list);
+        return list;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

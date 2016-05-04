@@ -21,6 +21,7 @@ public class TreeTest {
     private Tree<String> treeBasics;
 
     private Tree<String> treeTraversal;
+
     private Tree<Integer> treeNum;
 
     @Before
@@ -111,4 +112,13 @@ public class TreeTest {
         assertEquals(true, treeNum.isBst());
     }
 
+    @Test
+    public void inOrderSuccessor() throws Exception {
+        final Vertex<String> successorA = treeTraversal.inOrderSuccessor("A", new ArrayList<Vertex<String>>());
+        final Vertex<String> successorF = treeTraversal.inOrderSuccessor("F", new ArrayList<Vertex<String>>());
+        final Vertex<String> successorI = treeTraversal.inOrderSuccessor("I", new ArrayList<Vertex<String>>());
+        assertEquals("B", successorA.getData());
+        assertEquals("G", successorF.getData());
+        assertEquals(null, successorI);
+    }
 }

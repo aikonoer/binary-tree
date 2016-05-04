@@ -13,16 +13,17 @@ import static org.junit.Assert.assertEquals;
  * Created by brianmomongan on 2/05/16.
  */
 public class TreeTest {
-    @Test
-    public void getRoot() throws Exception {
-
-    }
 
     private Tree<String> treeBasics;
 
     private Tree<String> treeTraversal;
 
     private Tree<Integer> treeNum;
+
+    @Test
+    public void getRoot() throws Exception {
+
+    }
 
     @Before
     public void setUp() throws Exception {
@@ -139,6 +140,16 @@ public class TreeTest {
         treeTraversal.deleteVertex("I");
         final Vertex<String> maxH = treeTraversal.findMax();
         assertEquals("H", maxH.getData());
+    }
+
+    @Test
+    public void findHeight() throws Exception {
+        final int treeTraversalHeight = treeTraversal.findHeight();
+        assertEquals(3, treeTraversalHeight);
+        final int treeNumHeight = treeNum.findHeight();
+        assertEquals(2, treeNumHeight);
+        final int treeBasicsHeight = treeBasics.findHeight();
+        assertEquals(4, treeBasicsHeight);
     }
 }
 

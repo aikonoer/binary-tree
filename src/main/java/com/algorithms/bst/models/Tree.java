@@ -170,6 +170,16 @@ public class Tree<T extends Comparable<T>> {
         else return findMax(current.getRight());
     }
 
+    public int findHeight() {
+        return findHeight(root);
+    }
+
+    private int findHeight(Vertex<T> current) {
+        if (current == null) return -1;
+        final int left = 1 + findHeight(current.getLeft());
+        final int right = 1 + findHeight(current.getRight());
+        return right >= left ? right : left;
+    }
 }
 
 

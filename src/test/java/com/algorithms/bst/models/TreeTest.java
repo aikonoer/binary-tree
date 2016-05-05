@@ -151,6 +151,18 @@ public class TreeTest {
         final int treeBasicsHeight = treeBasics.findHeight();
         assertEquals(4, treeBasicsHeight);
     }
+
+    @Test
+    public void isBalanced() throws Exception {
+        final boolean treeTraversalBalanced = treeTraversal.isBalanced();
+        assertEquals(false, treeTraversalBalanced);
+
+        final boolean treeNumBalanced = treeNum.isBalanced();
+        assertEquals(true, treeNumBalanced);
+
+        final boolean treeBasicsBalanced = treeBasics.isBalanced();
+        assertEquals(false, treeBasicsBalanced);
+    }
 }
 
 

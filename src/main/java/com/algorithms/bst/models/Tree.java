@@ -180,6 +180,18 @@ public class Tree<T extends Comparable<T>> {
         final int right = 1 + findHeight(current.getRight());
         return right >= left ? right : left;
     }
+
+    public boolean isBalanced() {
+        return isBalanced(root) != -2;
+    }
+
+    private int isBalanced(Vertex<T> current) {
+        if (current == null) return 0;
+        final int left = 1 + isBalanced(current.getLeft());
+        final int right = 1 + isBalanced(current.getRight());
+        if (Math.abs(left - right) > 1 || left == -1 || right == -1) return -2;
+        return right >= left ? right : left;
+    }
 }
 
 

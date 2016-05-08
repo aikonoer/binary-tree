@@ -1,4 +1,6 @@
-package com.algorithms.bst.models;
+package com.algorithms.bst;
+
+import com.algorithms.bst.models.Vertex;
 
 import java.util.List;
 import java.util.Queue;
@@ -6,7 +8,7 @@ import java.util.Queue;
 /**
  * Created by brianmomongan on 1/05/16.
  */
-public class Tree<T extends Comparable<T>> {
+public class BstTree<T extends Comparable<T>> {
 
     private Vertex<T> root;
 
@@ -176,9 +178,7 @@ public class Tree<T extends Comparable<T>> {
 
     private int findHeight(Vertex<T> current) {
         if (current == null) return -1;
-        final int left = 1 + findHeight(current.getLeft());
-        final int right = 1 + findHeight(current.getRight());
-        return right >= left ? right : left;
+        return Math.max(findHeight(current.getLeft()), findHeight(current.getRight())) + 1;
     }
 
     public boolean isBalanced() {
@@ -192,6 +192,8 @@ public class Tree<T extends Comparable<T>> {
         if (Math.abs(left - right) > 1 || left == -1 || right == -1) return -2;
         return right >= left ? right : left;
     }
+
+
 }
 
 

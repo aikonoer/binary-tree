@@ -1,5 +1,6 @@
 package com.algorithms.bst.models;
 
+import com.algorithms.bst.BstTree;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,13 +13,13 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by brianmomongan on 2/05/16.
  */
-public class TreeTest {
+public class BstTreeTest {
 
-    private Tree<String> treeBasics;
+    private BstTree<String> treeBasics;
 
-    private Tree<String> treeTraversal;
+    private BstTree<String> treeTraversal;
 
-    private Tree<Integer> treeNum;
+    private BstTree<Integer> treeNum;
 
     @Test
     public void getRoot() throws Exception {
@@ -27,7 +28,7 @@ public class TreeTest {
 
     @Before
     public void setUp() throws Exception {
-        treeBasics = new Tree<>();
+        treeBasics = new BstTree<>();
         treeBasics.insertVertex("O");
         treeBasics.insertVertex("A");
         treeBasics.insertVertex("B");
@@ -35,7 +36,7 @@ public class TreeTest {
         treeBasics.insertVertex("K");
         treeBasics.insertVertex("P");
 
-        treeTraversal = new Tree<>();
+        treeTraversal = new BstTree<>();
         treeTraversal.insertVertex("F");
         treeTraversal.insertVertex("B");
         treeTraversal.insertVertex("A");
@@ -46,7 +47,7 @@ public class TreeTest {
         treeTraversal.insertVertex("I");
         treeTraversal.insertVertex("H");
 
-        treeNum = new Tree<>();
+        treeNum = new BstTree<>();
         treeNum.insertVertex(5);
         treeNum.insertVertex(1);
         treeNum.insertVertex(8);
@@ -164,20 +165,3 @@ public class TreeTest {
         assertEquals(false, treeBasicsBalanced);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

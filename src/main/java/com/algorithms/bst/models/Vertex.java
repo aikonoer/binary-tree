@@ -8,6 +8,7 @@ public class Vertex<T extends Comparable<T>> implements Comparable<T> {
     private T data;
     private Vertex<T> left;
     private Vertex<T> right;
+    private int depth;
 
     public Vertex(T data) {
         this.data = data;
@@ -31,6 +32,14 @@ public class Vertex<T extends Comparable<T>> implements Comparable<T> {
 
     public void setRight(Vertex<T> right) {
         this.right = right;
+    }
+
+    public int getDepth() {
+        return depth;
+    }
+
+    public void setDepth(int depth) {
+        this.depth = depth;
     }
 
     @Override

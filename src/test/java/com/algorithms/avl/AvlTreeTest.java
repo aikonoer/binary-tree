@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class AvlTreeTest {
 
-    private AvlTree<String> tree;
+    private AvlTree<Integer> tree;
 
     @Before
     public void setUp() throws Exception {
@@ -24,9 +24,11 @@ public class AvlTreeTest {
 
     @Test
     public void insert() throws Exception {
-        tree.insert("A");
-        tree.insert("G");
-        tree.insert("N");
-        assertEquals("A", tree.getRoot().getData());
+        tree.insert(10);
+        tree.insert(5);
+        tree.insert(15);
+        tree.insert(12);
+        tree.insert(13);
+        assertEquals(10, tree.getRoot().getData().intValue());
     }
 }

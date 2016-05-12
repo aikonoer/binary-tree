@@ -1,9 +1,6 @@
 package com.algorithms.avl;
 
-import com.algorithms.bst.models.Vertex;
-
-import java.util.LinkedList;
-import java.util.Queue;
+import com.algorithms.models.Vertex;
 
 /**
  * Created by brianmomongan on 8/05/16.

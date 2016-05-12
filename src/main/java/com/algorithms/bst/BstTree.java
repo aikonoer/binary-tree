@@ -1,6 +1,6 @@
 package com.algorithms.bst;
 
-import com.algorithms.bst.models.Vertex;
+import com.algorithms.models.Vertex;
 
 import java.util.List;
 import java.util.Queue;

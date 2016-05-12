@@ -1,6 +1,6 @@
-package com.algorithms.bst.models;
+package com.algorithms.bst;
 
-import com.algorithms.bst.BstTree;
+import com.algorithms.models.Vertex;
 import org.junit.Before;
 import org.junit.Test;
 

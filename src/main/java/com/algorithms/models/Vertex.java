@@ -1,4 +1,4 @@
-package com.algorithms.bst.models;
+package com.algorithms.models;
 
 /**
  * Created by brianmomongan on 1/05/16.

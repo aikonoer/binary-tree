@@ -24,16 +24,14 @@ public class AvlTreeTest {
 
     @Test
     public void insert() throws Exception {
-        tree.insert(10);
         tree.insert(5);
-        tree.insert(15);
-        tree.insert(16);
+        tree.insert(4);
         tree.insert(6);
-        tree.insert(12);
-        tree.insert(11);
-        tree.insert(13);
-        tree.insert(14);
-
-        assertEquals(10, tree.getRoot().getData().intValue());
+        tree.insert(7);
+        tree.insert(15);
+        tree.insert(50);
+        tree.insert(23);
+        tree.insert(71);
+        assertEquals(7, tree.getRoot().getData().intValue());
     }
 }

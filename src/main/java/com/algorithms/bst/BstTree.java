@@ -192,34 +192,4 @@ public class BstTree<T extends Comparable<T>> {
         if (Math.abs(left - right) > 1 || left == -1 || right == -1) return -2;
         return right >= left ? right : left;
     }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
